@@ -1,0 +1,113 @@
+whenever a state variable updates,react re render the component
+
+//-----History
+🕰️ Before React...
+In older web development:
+
+=>Developers used jQuery or other libraries.
+=>DOM updates were manual — like document.getElementById(...).innerHTML = ....
+=>If you wanted to update part of a page, you had to manage it yourself — very error-prone and messy 😵
+=>So yes, partial updates existed, but they were:
+Hard to manage
+Not automatic
+Prone to bugs and spaghetti code
+
+🚀 What React Did Differently:
+React made partial re-rendering:
+1.Automatic: You just change state or props, React handles the rest.
+2.Efficient: Uses the Virtual DOM and Fiber for fast updates.
+3.Declarative: You write what UI should look like, not how to update it.
+That’s why React stood out from older methods.
+
+💡 Summary:
+Feature	                    Before React	        With React
+Partial Updates	            Possible, but manual	Automatic and smart
+Easy to manage	                ❌	                  ✅
+Based on Virtual DOM	        ❌	                  ✅
+Uses diffing for efficiency	    ❌	                  ✅
+
+
+//-----virtual DOM-----
+
+🧱 What is the Virtual DOM?
+The Virtual DOM (V-DOM) is a lightweight copy of the real DOM (the web page you see in the browser).
+It’s like a blueprint or a draft of your actual webpage.
+
+🧠 Why does React use the Virtual DOM?
+Because updating the real DOM is slow ⚠️
+So React updates the Virtual DOM first, compares it to the previous version, and then updates only the parts that changed in the real DOM.
+This makes your app faster and smoother 🚀
+
+🔄 How it works (Step-by-step):
+1.You change something (like state or props).
+2.React creates a new Virtual DOM.
+3.React compares it with the old Virtual DOM.
+4.React finds the differences (called "diffing").
+5.React updates only the changed parts in the real DOM.
+
+🧠 Real DOM vs Virtual DOM:
+Feature	             Real DOM	             Virtual DOM
+📦 What it is	    Actual UI in browser	Lightweight copy in memory
+🐢 Speed	        Slow to update	        Fast to calculate changes
+⚙️ Update type	    Full or partial	        Only changed parts
+🤖 Managed by	    Browser	                React (in memory)
+
+🪄 Simple Analogy:
+Imagine you're editing a book:
+Real DOM: Rewriting the whole page with a pen 🖊️ (slow)
+Virtual DOM: Making changes on a draft first ✏️, then copying only the changes to the real page (fast and clean!)
+
+
+//---Difffing---
+Term	            Meaning
+Diffing	            Finding the difference between two Virtual DOMs
+Why?	            To update the real DOM efficiently
+Helps	            Avoid unnecessary changes
+Powered by	        Smart algorithms + key props in lists
+
+
+//------Reconciliation----
+🧠 Reconciliation  is the process React uses to figure out what changes need to be made to the DOM when something in
+your app changes (like state or props).
+Instead of updating the whole page, React:
+1.Creates a new Virtual DOM – a lightweight copy of the actual DOM.
+2.Compares the new Virtual DOM with the old one using the reconciliation algorithm.
+3.Finds the differences (called "diffing").
+4.Updates only the changed parts in the real DOM – this makes updates fast and efficient.
+
+
+//---React Fiber---
+🧵 What is React Fiber?
+React Fiber is the newer engine (introduced in React 16) that powers the Reconciliation Algorithm we just talked about.
+
+Think of it like this:
+🧠 Old React (before Fiber) = Smart but not flexible
+⚡ New React (with Fiber) = Smart and flexible + better performance
+
+🤔 Why did React need Fiber?
+Before Fiber, React did everything in one go — if a component was big, React might block the browser and make the app feel laggy.
+With Fiber, React can:
+✅ Split work into small chunks
+✅ Pause and continue work
+✅ Prioritize important updates (like animations or typing)
+
+🌟 Simple Analogy:
+Old React:
+"Let me clean the whole house in one shot — don’t bother me until I’m done."
+React with Fiber:
+"I’ll clean one room, take a break, respond if someone calls, then keep cleaning."
+
+🧵 Analogy Time:
+Imagine updating a big to-do list on paper:
+Reconciliation Algorithm is like figuring out what items changed.
+React Fiber is like how you physically erase and rewrite things, but now with better tools — you can pause, prioritize, or skip less important updates.
+So, in short:
+🧠 Reconciliation is the idea
+⚙️ Fiber is the tool that runs it better
+
+Short Note:
+1.Diffing finds the changes between the new and old Virtual DOM,and the Reconciliation Algorithm uses that info to
+update the real DOM efficiently.
+2.React Fiber is the engine behind React that breaks updates into small units of work (called fibers), 
+allowing React to update components in chunks instead of doing everything in one go.
+

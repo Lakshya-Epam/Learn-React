@@ -1,28 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-const rootElement = ReactDOM.createRoot(document.getElementById("root"));
-
-const HeaderComponent = () => {
-    return (
-        <div className="header">
-            <div className="logo">
-                <img src="https://images-platform.99static.com/mdbeYP7EWgX7tdQGLYwFj6ctftg=/0x0:1000x1000/500x500/top/smart/99designs-contests-attachments/64/64173/attachment_64173052" id="logo" alt="logo" />
-            </div>
-        <div ><input className="searchBar" id ="inputbox" type="textbox" placeholder="what do you want to eat?"></input> <button className="searchBar"><b>Search</b></button></div>
-
-            <div className="nav-items">
-                <ul>
-                    <li>Home</li>
-                    <li>About Us</li>
-                    <li>Contact Us</li>
-                    <li>Cart</li>
-                </ul>
-            </div>
-        </div>
-    )
-};
-
 const resList = [
     {
         "id": 1,
@@ -116,43 +91,4 @@ const resList = [
     }
 ];
 
-const RestrauntCardComponent = ({ resData }) => {
-    return (
-        <div className="res-card">
-            <img
-                alt="res-image"
-                className="res-image"
-                src={resData.image}
-            />
-            <h3 id="res-name">{resData.name}</h3>
-            <h4>{resData.cuisine.join(", ")}</h4>
-            <h4>{resData.rating} Stars</h4>
-            <h4>{resData.pure_veg ? "Pure Veg" : "Non-Veg"}</h4>
-            <h4>{resData.area}</h4>
-        </div>
-    );
-};
-
-const BodyComponent = () => {
-    return (<div className="body">
-        <div className="restraunt-Container">
-        {resList.map((resObj) => (
-    <RestrauntCardComponent key={resObj.id} resData={resObj} />
-))}
-
-        </div>
-    </div>)
-};
-const AppLayout = () => {
-    return (
-        <div>
-            <HeaderComponent />
-            <BodyComponent />
-        </div>
-    )
-}
-rootElement.render(<AppLayout />);
-
-
-
-
+export default resList ;
