@@ -1,18 +1,25 @@
-
-const RestrauntCardComponent = ({ resData }) => {
+ const RestrauntCardComponent = ({ resData }) => {
     return (
         <div className="res-card">
             <img
                 alt="res-image"
                 className="res-image"
-                src={resData.image}
+                src={
+                    "https://media-assets.swiggy.com/swiggy/image/upload/" +
+                    resData.cloudinaryImageId
+                }
             />
             <h3 id="res-name">{resData.name}</h3>
-            <h5>{resData.cuisine.join(", ")}</h5>
-            <h5>{resData.rating} Stars</h5>
-            <h5>{resData.pure_veg ? "Pure Veg" : "Non-Veg"}</h5>
-            <h5>{resData.area}</h5>
+            <h4>{resData.cuisines?.join(", ") || "No cuisines listed"}</h4>
+            <h4>{resData.avgRating} Stars</h4>
+            {resData.veg !== undefined && (
+                <h4>{resData.veg ? "Pure Veg" : "Non-Veg"}</h4>
+            )}
+            <h4>{resData.areaName}</h4>
         </div>
     );
 };
- export default RestrauntCardComponent ;
+ 
+export default RestrauntCardComponent;
+ 
+ 

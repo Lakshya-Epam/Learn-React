@@ -75,6 +75,7 @@ Instead of updating the whole page, React:
 3.Finds the differences (called "diffing").
 4.Updates only the changed parts in the real DOM – this makes updates fast and efficient.
 
+whenever state variable updates , react triggers a reconciliation cycle
 
 //---React Fiber---
 🧵 What is React Fiber?

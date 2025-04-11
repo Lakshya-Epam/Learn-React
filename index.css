@@ -61,14 +61,35 @@ body{
     border: 1px solid white;
     border-radius: 5px;
 }
-.searchBar
+.filter{
+    display: flex;
+}
+.btn
 {
     border: 2px solid black;
     border-radius: 3px;
+    background-color: #FEBA17;
+    cursor: pointer;
 }
-#inputbox
+.searchBar
+{
+    margin-top: 13px;
+    margin-left: 10px;
+}
+.searchBox
 {
     width: 250px;
+    border: 1px solid black;
+    margin-right: 5px;
+}
+.filter-btn
+{
+    margin-top: 10px;
+    margin-left: 20px;
+    background-color: white;
+    border-radius: 25px;
+    height: 30px;
+    cursor: pointer;
 }
 .res-card:hover{
     cursor: pointer;
@@ -85,4 +106,23 @@ body{
 {
     margin: 5px;
     background-color: #F8F4E1;
+}
+.shimmer-container
+{
+    margin-top: 15px ;
+    border: 2px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: white;
+    border-radius: 5px;
+}
+.shimmer-cards
+{
+    width: 200px;
+    height: 400px;
+    background-color: gray;
+    margin: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #f0f0f0 ;
 }
